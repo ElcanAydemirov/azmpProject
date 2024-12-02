@@ -1,0 +1,140 @@
+/* Genel stil ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    animation: backgroundAnimation 5s infinite alternate;
+}
+
+/* Arka plan animasyonu */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+
+    100% {
+        background: linear-gradient(to right, #2575fc, #6a11cb);
+    }
+}
+
+/* Login formunun kapsayıcı container'ı */
+.login-container,
+.forgot-password-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Login form başlığı */
+.login-form h2,
+.forgot-password-form h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Input alanlarının stilleri */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border: 2px solid #2575fc;
+}
+
+/* Log In butonu */
+.btn-login,
+.btn-reset {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #2575fc;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover,
+.btn-reset:hover {
+    background-color: #6a11cb;
+    transform: translateY(-2px);
+}
+
+/* Unutulan şifre linki */
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.forgot-password a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Back to Login link */
+.back-to-login {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.back-to-login a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.back-to-login a:hover {
+    text-decoration: underline;
+}
+
+/* Animasyon efektleri */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
