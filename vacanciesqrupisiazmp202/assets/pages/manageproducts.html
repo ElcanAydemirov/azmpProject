@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <style>
+        /* Sidebar Styling */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #343a40;
+            color: #fff;
+            transition: left 0.3s;
+        }
+
+        #sidebar.active {
+            left: 0;
+        }
+
+        #sidebar .nav-link {
+            color: #fff;
+        }
+
+        #sidebar .nav-link:hover {
+            background: #555;
+        }
+
+        /* Main Content */
+        #main-content {
+            margin-left: 250px;
+        }
+
+        /* Vacancy Cards */
+        .vacancy-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .vacancy-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .vacancy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .vacancy-card h5 {
+            font-size: 1.25rem;
+        }
+
+        .vacancy-card .btn {
+            margin-top: 10px;
+        }
+
+        .vacancy-card .candidate-status {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <ul class="nav flex-column p-3">
+            <li class="nav-item">
+                <button id="toggle-sidebar" class="btn btn-light">Toggle Menu</button>
+            </li>
+            <li class="nav-item">
+                <button id="add-vacancy" class="btn btn-light w-100">Add Vacancy</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="container">
+        <h1>Vacancy Management</h1>
+        <div id="vacancy-form">
+            <form id="vacancy-form-id">
+                <div class="mb-3">
+                    <label for="jobTitle" class="form-label">Job Title</label>
+                    <input type="text" class="form-control" id="jobTitle" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="text" class="form-control" id="salary" required>
+                </div>
+                <div class="mb-3">
+                    <label for="postedAt" class="form-label">Posted Date</label>
+                    <input type="datetime-local" class="form-control" id="postedAt" required>
+                </div>
+                <div class="mb-3">
+                    <label for="expiresAt" class="form-label">Expires At</label>
+                    <input type="datetime-local" class="form-control" id="expiresAt" required>
+                </div>
+                <div class="mb-3">
+                    <label for="employmentType" class="form-label">Employment Type</label>
+                    <select class="form-control" id="employmentType" required>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Freelance">Freelance</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Vacancy</button>
+            </form>
+        </div>
+
+        <div class="vacancy-list" id="vacancy-list">
+            <!-- Vacancy cards will be displayed here -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.14.5/sweetalert2.min.js"
+        integrity="sha512-JCDnPKShC1tVU4pNu5mhCEt6KWmHf0XPojB0OILRMkr89Eq9BHeBP+54oUlsmj8R5oWqmJstG1QoY6HkkKeUAg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+        integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="../js/manageproduct.js"></script>
