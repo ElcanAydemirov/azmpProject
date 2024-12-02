@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancy Search</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="section vacancies">
+    <div class="container">
+        <div class="search-bar">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Vakansiya adı üzrə axtarış edin..."
+            />
+        </div>
+        <div class="filters">
+            <select id="salary-range">
+                <option value="">Maaş aralığı</option>
+                <option value="2000-3000">2000-3000 AZN</option>
+                <option value="3000-4000">3000-4000 AZN</option>
+                <option value="3500-4500">3500-4500 AZN</option>
+            </select>
+            <select id="sorting">
+                <option value="">Sıralama</option>
+                <option value="salary">Maaş üzrə</option>
+                <option value="title">Vəzifə adı A-Z</option>
+                <option value="company">Şirkət adı A-Z</option>
+            </select>
+            <select id="employment-type">
+                <option value="">İş növü</option>
+                <option value="Full-time">Full-time</option>
+                <option value="Part-time">Part-time</option>
+            </select>
+        </div>
+        <div id="vacancy-list"></div>
+        <div id="vacancy-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title"></h2>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Şirkət:</strong> <span id="modal-company"></span></p>
+                    <p><strong>Maaş:</strong> <span id="modal-salary"></span></p>
+                    <p><strong>İş növü:</strong> <span id="modal-employment-type"></span></p>
+                    <p><strong>Yerləşmə Tarixi:</strong> <span id="modal-postedAt"></span></p>
+                    <p><strong>Son Tarix:</strong> <span id="modal-expiresAt"></span></p>
+                    <p><strong>Açıqlama:</strong> <span id="modal-description"></span></p>
+                </div>
+                <button class="apply-button" id="apply-button">Muraciət Et</button>
+            </div>
+        </div>
+    </div>
+    <script src="../data/db.json"></script>
+    <script src="../services/vacancyService.js" type="module"></script>
+    </div>
+</body>
+</html>
