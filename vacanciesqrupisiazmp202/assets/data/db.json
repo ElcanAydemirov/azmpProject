@@ -151,27 +151,6 @@
       ]
     },
     {
-      "id": "4",
-      "title": "UI/UX Designer",
-      "companyId": 1,
-      "description": "We are looking for a UI/UX Designer to create user-friendly and aesthetically pleasing designs.",
-      "salary": "2200-3000 AZN",
-      "postedAt": "2024-12-02T09:30:00Z",
-      "expiresAt": "2024-12-30T23:59:59Z",
-      "employmentType": "Full-time",
-      "isActive": true,
-      "candidates": [
-        {
-          "candidateId": "1",
-          "status": "pending"
-        },
-        {
-          "candidateId": "3",
-          "status": "rejected"
-        }
-      ]
-    },
-    {
       "id": "5",
       "title": "Product Manager",
       "companyId": 1,
@@ -187,6 +166,36 @@
           "status": "pending"
         }
       ]
+    },
+    {
+      "id": "bc7d",
+      "title": "Backend Developer",
+      "description": "afasfs",
+      "salary": "afsaf",
+      "postedAt": "2024-12-17T18:11",
+      "expiresAt": "2024-12-06T18:11",
+      "employmentType": "Part-time",
+      "candidates": []
+    },
+    {
+      "id": "b93f",
+      "title": "Product Manager",
+      "description": "We are looking for a Product Manager to oversee product development from conception to launch.",
+      "salary": "3500-4500 AZN",
+      "postedAt": "2024-12-03T10:00",
+      "expiresAt": "2024-12-22T23:59",
+      "employmentType": "Full-time",
+      "candidates": []
+    },
+    {
+      "id": "5e2f",
+      "title": ";oiuhio;ioi",
+      "description": "uyfgyhu",
+      "salary": "2500-3500 AZN",
+      "postedAt": "2025-01-18T18:14",
+      "expiresAt": "2024-12-26T18:13",
+      "employmentType": "Freelance",
+      "candidates": []
     }
   ]
 }
