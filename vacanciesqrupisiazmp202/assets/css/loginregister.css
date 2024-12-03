@@ -1,0 +1,109 @@
+/* Ümumi üslublar */
+body {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Şəffaf qara fon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Şəffaf ağ arxa fon */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+}
+
+/* Form bölmələri */
+.form-section,
+.signup-section {
+    padding: 50px;
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section.active,
+.signup-section.active {
+    display: flex;
+}
+
+/* Xoş gəldin bölməsi */
+.welcome-section {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8), rgba(52, 208, 88, 0.8));
+    /* Şəffaf yaşıl gradient */
+    color: #fff;
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    /* Şəkil və düymə arasındakı məsafə */
+}
+
+/* Üslublar: Formlar */
+.form-section h2,
+.signup-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.form-section input,
+.signup-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-section button,
+.signup-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.form-section button:hover,
+.signup-section button:hover {
+    background-color: #218838;
+}
+
+/* Düymə dizaynı */
+.styled-btn {
+    background-color: #28a745;
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.styled-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.welcome-section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
