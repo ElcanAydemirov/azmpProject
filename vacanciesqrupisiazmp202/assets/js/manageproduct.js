@@ -1,6 +1,5 @@
-const API_URL = 'http://127.0.0.1:3001/vacancies';
+const API_URL = 'http://127.0.0.1:3000/vacancies';
 
-// Function to get all vacancies
 async function getVacancies() {
     try {
         const response = await axios.get(API_URL);
@@ -11,10 +10,9 @@ async function getVacancies() {
     }
 }
 
-// Function to render the list of vacancies as cards
 function renderVacancyList(vacancies) {
     const vacancyListContainer = document.getElementById('vacancy-list');
-    vacancyListContainer.innerHTML = ''; // Clear previous content
+    vacancyListContainer.innerHTML = '';
     vacancies.forEach(vacancy => {
         const vacancyCard = document.createElement('div');
         vacancyCard.classList.add('vacancy-card', 'card');
@@ -38,7 +36,6 @@ function renderVacancyList(vacancies) {
     });
 }
 
-// Function to edit a vacancy
 async function editVacancy(id) {
     try {
         const response = await axios.get(`${API_URL}/${id}`);
@@ -53,18 +50,16 @@ async function editVacancy(id) {
         console.error("Error fetching vacancy details:", error);
     }
 }
-
-// Function to delete a vacancy
+//delete
 async function deleteVacancy(id) {
     try {
         await axios.delete(`${API_URL}/${id}`);
-        getVacancies(); // Refresh the vacancy list
+        getVacancies();
     } catch (error) {
         console.error("Error deleting vacancy:", error);
     }
 }
 
-// Handle form submission for adding/editing a vacancy
 document.getElementById('vacancy-form-id').addEventListener('submit', async function (event) {
     event.preventDefault();
     const jobTitle = document.getElementById('jobTitle').value;
@@ -81,17 +76,16 @@ document.getElementById('vacancy-form-id').addEventListener('submit', async func
         postedAt: postedAt,
         expiresAt: expiresAt,
         employmentType: employmentType,
-        candidates: [] // Initially no candidates
+        candidates: []
     };
 
     try {
-        await axios.post(API_URL, newVacancy); // Add new vacancy
-        getVacancies(); // Refresh vacancy list
+        await axios.post(API_URL, newVacancy);
+        getVacancies();
         document.getElementById('vacancy-form-id').reset();
     } catch (error) {
         console.error("Error adding vacancy:", error);
     }
 });
 
-// Initially load vacancies
 getVacancies();
