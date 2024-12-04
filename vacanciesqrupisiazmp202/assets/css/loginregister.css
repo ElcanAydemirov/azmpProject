@@ -36,8 +36,8 @@ body {
 
 /* Xoş gəldin bölməsi */
 .welcome-section {
-    background: linear-gradient(135deg, rgba(40, 167, 69, 0.8), rgba(52, 208, 88, 0.8));
-    /* Şəffaf yaşıl gradient */
+    display: none;
+    /* background: linear-gradient(135deg, rgba(40, 167, 69, 0.8), rgba(52, 208, 88, 0.8)); */
     color: #fff;
     padding: 50px;
     flex: 1;
@@ -47,7 +47,6 @@ body {
     align-items: center;
     text-align: center;
     gap: 20px;
-    /* Şəkil və düymə arasındakı məsafə */
 }
 
 /* Üslublar: Formlar */
