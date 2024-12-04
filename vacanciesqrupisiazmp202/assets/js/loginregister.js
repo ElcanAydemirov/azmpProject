@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (user) {
             alert('Welcome back!');
-            window.location.href = "../"
+            window.location.href = "../../index.html"
         } else {
             alert('sehv');
         }
